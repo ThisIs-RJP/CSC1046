@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extra_styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Chess Client</h1>
+    <p>Start a new game or join an existing one.</p>
+
+    <a href="{% url 'new_game' %}" class="btn">Start New Game</a>
+    <a href="{% url 'join_game' %}" class="btn">Join Game</a>
+</div>
+{% endblock %}

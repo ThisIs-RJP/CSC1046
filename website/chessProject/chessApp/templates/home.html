@@ -6,84 +6,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chess App</title>
 
+    <link rel="icon" href="{% static 'images/chessLogo.png' %}">
+
+    <!-- ######################## FIXING THE FONTS ########################-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <!-- ######################## FIXING THE FONTS ########################-->
+
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
     {% block extra_styles %}
     {% endblock %}
 </head>
 <body>
-    <div class="left-div">
-        <div class="navbar-left">
-            <img src="{% static 'images/chessLogo.png' %}" alt="Chess Logo">
-            <a href="#">Tutorial</a>
-            <a href="#">About us</a>
-            <a href="#">How to Play</a>
-        </div>
-        <div class="chess-wheel">
-            <div class="chess-slide">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
-            </div>
-            <div class="chess-slide">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
-            </div>
-            <div class="chess-slide">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
-            </div>
-        </div>
-        <div class="chess-wheel-right">
-            <div class="chess-slide-right">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
-            </div>
-            <div class="chess-slide-right">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
-            </div>
-            <div class="chess-slide-right">
-                <img src="{% static 'images/horse.png' %}"/>
-                <img src="{% static 'images/queen.png' %}"/>
-                <img src="{% static 'images/pawn.png' %}"/>
-                <img src="{% static 'images/bishop.png' %}"/>
-                <img src="{% static 'images/rook.png' %}"/>
+
+    <!-- <div class='block'>
+        <div class="mainBG">
+            <img src="{% static 'images/chessLogo.png' %}" class="mainBgImg" alt="Cafe Background" />
+              <div class="behindLogo">
             </div>
         </div>
     </div>
-        
-    <div class="right-div">
-        <div class="navbar-right">
-            <a href="#">Play</a>
-            <a href="#">Log in</a>
-        </div>
 
-        <div class="login">
-            <p class="title"></p>
-            <div class="form-container">
-                <input type="email" placeholder="Email address" class="input-box">
-                <input type="password" placeholder="Password" class="input-box">
+    <div class="loadInBox">
+    </div> -->
 
-                <div class="btn-container">
-                    <button>Login</button>
-                    <button>Create Account</button>
+    <div class="loginBox">
+        <div class="left-div">
+            <div class="navbar-left">
+                <img src="{% static 'images/chessLogo.png' %}" alt="Chess Logo">
+                <a href="#">Tutorial</a>
+                <a href="#">About us</a>
+                <a href="#">How to Play</a>
+            </div>
+            <div class="chess-wheel">
+                <div class="chess-slide">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
+                </div>
+                <div class="chess-slide">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
+                </div>
+                <div class="chess-slide">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
                 </div>
             </div>
+            <div class="chess-wheel-right">
+                <div class="chess-slide-right">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
+                </div>
+                <div class="chess-slide-right">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
+                </div>
+                <div class="chess-slide-right">
+                    <img src="{% static 'images/horse.png' %}"/>
+                    <img src="{% static 'images/queen.png' %}"/>
+                    <img src="{% static 'images/pawn.png' %}"/>
+                    <img src="{% static 'images/bishop.png' %}"/>
+                    <img src="{% static 'images/rook.png' %}"/>
+                </div>
+            </div>
+        </div>
+            
+        <div class="right-div">
+            <div class="navbar-right">
+                <a href="#">Play</a>
+                <a href="#">Log in</a>
+            </div>
 
+            <div class="login">
+                <p class="title"></p>
+                <div class="form-container">
+                    <input type="email" placeholder="Email address" class="input-box">
+                    <input type="password" placeholder="Password" class="input-box">
+
+                    <div class="btn-container">
+                        <button>Login</button>
+                        <button>Create Account</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 

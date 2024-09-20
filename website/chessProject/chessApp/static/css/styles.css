@@ -6,44 +6,229 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Global styling */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.left-div {
+    width: 814px;
+    height: 1024px;
+    background-color: #24242C;
+    box-sizing: border-box; 
+}
+
+.right-div {
+    width: 626px;
+    height: 1024px;
+    background-color: #FFFFFF;
+    box-sizing: border-box; 
+}
+
+
 /* Navbar styling */
-.navbar {
-    background-color: #333;
-    padding: 14px 20px;
+
+.navbar-left{
     display: flex;
-    border-radius: 15px;
-    margin: 10px;
+    align-items: center;
+    padding: 10px;  
+}
+.navbar-left img{
+    height: 54px;
+    width: 54px;
+    margin-left: 2%;
 }
 
-.navbar a {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 20px;
+.left-div .navbar-left a{
+    color: #FFFFFF;
     text-decoration: none;
-    font-size: 17px;
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: transform 0.3s ease-in-out;
+}
+.left-div a:hover{
+    transform: scale(1.1);
 }
 
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-    border-radius: 10px;
+
+.navbar-right {
+    display:flex;
+    justify-content: flex-end;
+    padding: 10px;
+    align-items: center;
+
+}
+.right-div .navbar-right a{
+    color: #24242C;
+    text-decoration: none;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-left: 10%;
+    transition: transform 0.3s ease-in-out;
+}
+.right-div a:hover{
+    transform: scale(1.1);
 }
 
-.navbar a.active {
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 10px;
+/* Login styling */
+
+.login{
+    padding: 5% ;
+}
+.login p{
+    font-size: 54.2px;
+}
+.title{
+    width: fit-content;
+    content: "";
+}
+.title:after{
+    content: "";
+    animation: typeWriter 1.5s linear 1;
+    animation-fill-mode: forwards;
 }
 
-.navbar .navbar-items{
+.login .form-container .btn-container{
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.btn-container button {
+    background-color: transparent;  
+    border: none;                   
+    color: #000000;                 
+    padding: 10px 20px;             
+    font-size: 16px;               
+    cursor: pointer;                
+    outline: none;                 
+    transition: color 0.3s ease, transform 0.3s ease-in-out;
+    text-align: left;   
 }
 
-.navbar .login-link{
-    margin-left: auto;
+.btn-container button:hover {
+    color: #585858; 
+    transform: scale(1.15);
+    transform: translateX(2%);
 }
-.content {
-    padding: 3%;
+
+
+
+@keyframes typeWriter{
+    0%{
+        content: "W";
+    }
+    12.5%{
+        content: "WEL";
+    }
+    25%{
+        content: "WELCO";
+    }
+    37.5%{
+        content: "WELCOmE";
+    }
+    50%{
+        content: "WELCOM";
+    }
+    62.5%{
+        content: "WELCOME";
+    }
+    75%{
+        content: "WELCOME TO";
+    }
+    87.5%{
+        content: "WELCOME TO CHE";
+    }
+    100%{
+        content: "WELCOME TO CHESS-TICLES";
+    }
+}
+
+/* Style for input boxes */
+.form-container .input-box {
+    width: 300px;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    background-color: #C4C4C4; 
+    border-radius: 20px; 
+    font-size: 16px;
+    color: white;
+    outline: none;
+
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.form-container .input-box::placeholder {
+    color: white;
+    opacity: 0.8; 
+}
+
+.form-container .input-box:focus {
+    background-color: #B0B0B0;
+    transform: scale(1.05); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3)
+}
+
+/* chess pieces slide */
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes right-slide {
+    from {
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+.chess-wheel{
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    display: flex;
+    margin-top: 10%;
+}
+.chess-wheel:hover .chess-slide{
+    animation-play-state: paused;
+}
+
+.chess-slide{
+    animation: 3s slide infinite linear;
+}
+.chess-slide img{ 
+    height: 100px;
+    margin-right: 10px;
+}
+
+.chess-wheel-right {
+    display: flex;
+    flex-direction: row-reverse; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    width: 100%; 
+    margin-top: 10%;
+}
+
+/* Flex items */
+.chess-slide-right {
+    display: flex;
+    animation: 3s right-slide infinite linear; 
+}
+
+.chess-slide-right img {
+    height: 100px;
+    margin-left: 10px; 
+}
+
+.chess-wheel-right:hover .chess-slide-right{
+    animation-play-state: paused;
 }

@@ -40,12 +40,10 @@ INSTALLED_APPS = [
     'chessApp', 
 ]
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
-# Ensure you have this line to tell Django where to look for static files
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Adjust this according to your directory structure
+    BASE_DIR / "static",  
 ]
 
 MIDDLEWARE = [

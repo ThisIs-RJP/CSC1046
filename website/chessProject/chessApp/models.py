@@ -46,7 +46,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
     objects = UserManager()
 
-class Game(model.Model):
+class Game(models.Model):
     id = models.AutoField(primary_key=True)
     white_player = models.ForeignKey(User, related_name='white_player', on_delete=models.CASCADE)
     black_player = models.ForeignKey(User, related_name='black_player', on_delete=models.CASCADE)
@@ -56,6 +56,15 @@ class Game(model.Model):
     def __str__(self):
         return f"{self.white_player} vs {self.black_player} - {self.status}"
 
+
+
+class Board(models.Model):
+    id = models.AutoField(primary_key=True)
+    game = models.OneToOneField(Game, on_delete=models.CASCADE)
+    state = models.JSONField() 
+
+    def __str__(self):
+        return f"Board for Game {self.game.id}"
 class Piece(models.Model):
     id = models.AutoField(primary_key=True)
     board = models.ForeignKey(Board, on_delete=models.CASCADE)
@@ -77,11 +86,3 @@ class Move(models.Model):
 
     def __str__(self):
         return f"{self.piece} moved from {self.start_position} to {self.end_position}"
-
-class Board(models.Model):
-    id = models.AutoField(primary_key=True)
-    game = models.OneToOneField(Game, on_delete=models.CASCADE)
-    state = models.JSONField() 
-
-    def __str__(self):
-        return f"Board for Game {self.game.id}"

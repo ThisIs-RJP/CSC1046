@@ -1,0 +1,73 @@
+@startuml
+abstract class ChessPiece {
+    - position: Position
+    + isWhite: Boolean
+    + isFrozen : Boolean
+    + isCursed : Boolean
+    + isDoubleCapturable: Boolean
+    + getPosition()
+    + updatePosition()
+}
+
+class Board {
+    + squares: List<List<ChessPiece>>
+    + check: Boolean
+    + movePiece(chessPiece, startPosition, endPosition)
+    - isValidMove()
+    - isCheckmate()
+    - isOnTrapDoor()
+    - isStalemate()
+}
+
+class TrapDoor {
+    + position: Position
+    + event: String
+}
+
+class Position {
+    + x: int
+    + y: int
+}
+
+class King {
+    + hasMoved : Boolean
+}
+
+class Queen {
+}
+
+class Rook {
+    + hasMoved : Boolean 
+}
+
+class Bishop {
+}
+
+class Knight {
+}
+
+class Pawn {
+    + hasMoved : Boolean
+    - isAtEnd : Boolean
+    - randomPromotion()
+}
+
+class Player {
+    + chatHistory : String
+}
+
+Board "1" --> "1..n" ChessPiece : "Updates position" 
+Board --> ChessPiece : "Contains"
+Board "1" --> "0..n" TrapDoor : "Contains"
+Player --> Board : "Invokes moveChessPiece method"
+TrapDoor --> Position : "Contains"
+ChessPiece --> Position : "Contains"
+
+ChessPiece <|-- King
+ChessPiece <|-- Queen
+ChessPiece <|-- Rook
+ChessPiece <|-- Bishop
+ChessPiece <|-- Knight
+ChessPiece <|-- Pawn
+
+@enduml

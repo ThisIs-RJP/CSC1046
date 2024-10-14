@@ -1,0 +1,53 @@
+@startuml
+
+' Define system boundary for Chess Game
+rectangle "Chess Game System" {
+
+  ' Define the use cases inside the system
+  usecase "Log in" as login
+  usecase "Create Account" as createAccount 
+  usecase "Play Games" as playGames
+  usecase "Start Match" as startMatch
+  usecase "Quit Match" as quitMatch
+  usecase "Logout" as logout
+  
+  usecase "Move Chess Piece" as UC_MovePiece
+  usecase "Check for Valid Move" as UC_ValidMove
+  usecase "Display Error" as UC_DisplayError
+  usecase "Check for Checkmate" as UC_Checkmate
+  usecase "Check for Stalemate" as UC_Stalemate
+  usecase "Castle" as UC_Castle
+  usecase "En Passant" as UC_EnPassant
+  usecase "Promote Pawn" as UC_PromotePawn
+  usecase "Activate Trapdoor" as UC_Trapdoor
+  usecase "Check for Check" as UC_CheckForCheck
+
+  ' Include relationships (mandatory behavior)
+  UC_MovePiece --> UC_ValidMove : <<include>>
+  UC_ValidMove --> UC_Checkmate : <<include>>
+  UC_ValidMove --> UC_Stalemate : <<include>>
+  
+  ' Extend relationships (optional behavior)
+  UC_ValidMove <-- UC_DisplayError : <<extend>>
+  UC_Trapdoor <-- UC_CheckForCheck : <<extend>>
+}
+
+' Define actors
+actor "User (Player)" as user
+actor "White Player" as white
+actor "Black Player" as black
+
+' Actor interactions with use cases
+user --> login
+login --> playGames : "Successful Log in"
+login --> createAccount : "Unsuccessful Log in (New Player)"
+createAccount --> playGames
+
+playGames --> startMatch : "User selects 'Start Match'"
+startMatch --> quitMatch : "Forfeit Match"
+login --> logout
+
+white --> UC_MovePiece
+black --> UC_MovePiece
+
+@enduml

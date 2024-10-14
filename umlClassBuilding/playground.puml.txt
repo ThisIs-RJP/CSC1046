@@ -1,0 +1,139 @@
+playgoround
+
+@startuml
+
+class Board {
+    + squares: List<List<ChessPiece>>
+    + check: Boolean
+    + movePiece(startPosition, endPosition)
+    + isValidMove()
+    + isCheckmate()
+    + isStalemate()
+}
+
+class ChessPiece {
+    + position: Position
+    + isWhite: Boolean
+    + isFrozen : Boolean
+    + isCursed : Boolean
+    + isDoubleCapturable: Boolean
+    + move()
+}
+
+class TrapDoor{
+    position: Position
+    event: String
+}
+
+class Position {
+    + x: int
+    + y: int
+}
+
+class King{
+    + move()
+    + castle()
+}
+
+class Queen{
+    + move()
+}
+
+class Rook{
+    + move()
+}
+
+class Bishop{
+    + move()
+}
+
+class Knight{
+    + move()
+}
+
+class Pawn{
+    + move()
+    + enPassant()
+    + randomPromotion()
+}
+note right of Board
+Responsibilities:
+- Manage positions of all pieces.
+- Handle castling, en passant, promotion.
+- Trigger trap door events.
+- Check for check, checkmate, stalemate, or draw conditions.
+Collaborators:
+- ChessPiece, Position, TrapDoor, King, Rook, Pawn.
+end note
+
+note right of ChessPiece
+Responsibilities:
+- Represent a general chess piece.
+- Define attributes like position, isWhite, isCursed, isFrozen.
+- Handle piece-specific moves and states.
+Collaborators:
+- Board, Position, King, Queen, Rook, Bishop, Knight, Pawn.
+end note
+
+note right of King
+Responsibilities:
+- Move one square in any direction.
+- Handle castling.
+- Respond to check and checkmate conditions.
+Collaborators:
+- Board, Rook, ChessPiece.
+end note
+
+note right of Queen
+Responsibilities:
+- Move diagonally, vertically, or horizontally.
+Collaborators:
+- Board, ChessPiece.
+end note
+
+note right of Rook
+Responsibilities:
+- Move vertically or horizontally.
+- Participate in castling.
+Collaborators:
+- Board, King, ChessPiece.
+end note
+
+note right of Bishop
+Responsibilities:
+- Move diagonally.
+Collaborators:
+- Board, ChessPiece.
+end note
+
+note right of Knight
+Responsibilities:
+- Move in an L-shape.
+Collaborators:
+- Board, ChessPiece.
+end note
+
+note right of Pawn
+Responsibilities:
+- Move forward, capture diagonally.
+- Handle en passant, promotion, randomPromotion.
+Collaborators:
+- Board, ChessPiece.
+end note
+
+note right of TrapDoor
+Responsibilities:
+- Trigger random event when a piece lands on it.
+- Handle events like cursed, freeze, and double capture.
+Collaborators:
+- Board, ChessPiece, Position.
+end note
+
+note right of Position
+Responsibilities:
+- Define the x, y coordinates of a piece on the board.
+Collaborators:
+- Board, ChessPiece, TrapDoor.
+end note
+
+@enduml

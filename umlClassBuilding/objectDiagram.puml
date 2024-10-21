@@ -1,0 +1,85 @@
+@startuml
+' Object instances of classes
+
+' Board instance
+object board1 {
+    check = false
+}
+
+' Position instances for various pieces
+object positionKing {
+    x = 1
+    y = 1
+}
+
+object positionPawn1 {
+    x = 2
+    y = 2
+}
+
+object positionPawn2 {
+    x = 7
+    y = 7
+}
+
+' ChessPiece instances (King and Pawns as specific examples)
+object king1 {
+    isWhite = true
+    isFrozen = false
+    isCursed = false
+    isDoubleCapturable = false
+    hasMoved = true
+    position = positionKing
+}
+
+object pawn1 {
+    isWhite = true
+    isFrozen = false
+    isCursed = false
+    isDoubleCapturable = false
+    hasMoved = false
+    position = positionPawn1
+}
+
+object pawn2 {
+    isWhite = false
+    isFrozen = false
+    isCursed = false
+    isDoubleCapturable = false
+    hasMoved = true
+    position = positionPawn2
+}
+
+' Player instances
+object playerWhite {
+    moveHistory = "Player moved King to (1,1)"
+    chatHistory = "Sup"
+    isWhite = true
+}
+
+object playerBlack {
+    moveHistory = "Player moved Pawn to (7,7)"
+    chatHistory = "Hello"
+    isWhite = false
+}
+
+' TrapDoor instance
+object trapDoor1 {
+    position = "(5,5)"
+    event = "freeze"
+}
+
+' Associations between objects
+board1 --> king1 : "Contains"
+board1 --> pawn1 : "Contains"
+board1 --> pawn2 : "Contains"
+board1 --> trapDoor1 : "Contains"
+
+playerWhite --> king1 : "Owns"
+playerWhite --> pawn1 : "Owns"
+playerBlack --> pawn2 : "Owns"
+
+king1 -- positionKing : "Is at"
+pawn1 -- positionPawn1 : "Is at"
+pawn2 -- positionPawn2 : "Is at"
+@enduml

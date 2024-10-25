@@ -22,10 +22,12 @@ class Validator {
 
 class Board {
     + squares: List<List<ChessPiece>>
+    + roundCounter: Integer
     + check: Boolean
     + validator: Validator
     + trapDoorPositions: HashMap<Position, TrapDoor>
     + movePiece(chessPiece, startPosition, endPosition)
+    - trapDoorGenerator()
     - validator: Validator
     - isCheckmate()
     - isOnTrapDoorHandler()

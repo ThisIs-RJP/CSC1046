@@ -375,3 +375,29 @@ body {
 .chess-wheel-right:hover .chess-slide-right{
     animation-play-state: paused;
 }
+
+/* 
+        ###############################
+        ##### CONTENT BOX DEFAULT #####
+        ###############################
+*/
+
+/* Here lies the default configuration for the Home page Content Boxes */
+
+.content-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left-content-box {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+}
+
+.right-content-box {
+    width: 50%;
+    height: 100%;
+    background-color: red;
+}

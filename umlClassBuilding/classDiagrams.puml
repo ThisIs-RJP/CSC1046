@@ -1,10 +1,10 @@
 @startuml
 
-interface Moveable{
+interface ChessPieceMovementLogic{
     + move(position: Position)
 }
 
-abstract class ChessPiece implements Moveable{
+abstract class ChessPiece implements ChessPieceMovementLogic{
     - position: Position
     + isWhite: Boolean
     + isFrozen : Boolean
@@ -15,13 +15,20 @@ abstract class ChessPiece implements Moveable{
     + move(position: Position)
 }
 
+class Validator {
+    + validateMove(chessPiece, startPosition, endPosition)
+    + specialCasesHandler(chessPiece, startPosition, endPosition)
+}
+
 class Board {
     + squares: List<List<ChessPiece>>
     + check: Boolean
+    + validator: Validator
+    + trapDoorPositions: HashMap<Position, TrapDoor>
     + movePiece(chessPiece, startPosition, endPosition)
-    - isValidMove()
+    - validator: Validator
     - isCheckmate()
-    - isOnTrapDoor()
+    - isOnTrapDoorHandler()
     - isStalemate()
 }
 
@@ -72,10 +79,10 @@ class Player {
 }
 
 Board "1" --> "1..n" ChessPiece : "Updates position" 
-' ChessPieces and TrapDoors cannot exist without a board
+' ChessPieces and TrapDoors and Validators cannot exist without a board
 Board "1" *-- "1..n" ChessPiece : "Contains"
 Board "1" *-- "0..n" TrapDoor : "Contains"
-
+Board "1" *-- "1..1" Validator : "Contains"
 ' Player can send messages to the board but the board does not need to know who the player is
 Player "1" --> Board : "Invokes moveChessPiece method"
 

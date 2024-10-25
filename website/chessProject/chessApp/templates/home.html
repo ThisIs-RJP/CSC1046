@@ -96,6 +96,7 @@
                 <a href="#">Log in</a>
             </div>
 
+
             <div class="login">
                 <p class="title"></p>
                 <div class="form-container">
@@ -107,6 +108,22 @@
                         <button>Create Account</button>
                     </div>
                 </div>
+
+        <div class="login">
+            <p class="title"></p>
+            <div class="form-container">
+                <form action="." method="POST">
+                {% csrf_token %}
+                <input type="email" placeholder="Email address" class="input-box">
+                <input type="password" placeholder="Password" class="input-box">
+
+                <div class="btn-container">
+                    <button type="submit">Login</button>
+                    <button>Create Account</button>
+                </div>
+            </form>
+            </div>
+
 
             </div>
         </div>

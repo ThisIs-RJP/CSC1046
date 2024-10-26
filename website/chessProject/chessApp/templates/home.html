@@ -25,7 +25,11 @@
 
     <div class='block'>
         <div class="mainBG">
-            <img src="{% static 'images/chessLogo.png' %}" class="mainBgImg" alt="Cafe Background" />
+            <img 
+                src="{% static 'images/chessLogo.png' %}" 
+                class="mainBgImg" 
+                alt="Cafe Background" 
+            />
               <div class="behindLogo">
             </div>
         </div>
@@ -100,8 +104,17 @@
             <div class="login">
                 <p class="title"></p>
                 <div class="form-container">
-                    <input type="email" placeholder="Email address" class="input-box">
-                    <input type="password" placeholder="Password" class="input-box">
+                    <input 
+                        type="email" 
+                        placeholder="Email address" 
+                        class="input-box"
+                    >
+
+                    <input 
+                        type="password" 
+                        placeholder="Password" 
+                        class="input-box"
+                    >
 
                     <div class="btn-container">
                         <button>Login</button>
@@ -120,8 +133,54 @@
         
         <div class="content-box">
             <div class="left-content-box">
+                <img src="{% static 'images/chess.jpg' %}" id="content-chess-pic"/>
             </div>
             <div class="right-content-box">
+                <div class="right-content-box content-title">
+                <h1>
+                    About MyChess
+                </h1>
+                </div>
+                <div class="right-content-box content-desc">
+                    Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna
+                    Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna
+                    Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna
+                    Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna Humuna
+                </div>
+
+                <div class="right-content-box content-footer">
+                    <div class="right-content-box content-div" 
+                         style="display: flex; 
+                                justify-content: left; 
+                                align-items: center;"
+                        >
+                        <img id="right-content-icon" src="{% static 'images/chessLogo.png' %}" style="height: 70%;">
+                    </div>
+
+                    <div class="right-content-box content-div" 
+                         style="background-color: aqua; 
+                                display: flex; 
+                                justify-content: left; 
+                                align-items: center;"
+                        >
+                        <div style="
+                                height: 70%;
+                                position: relative
+                            ">
+                            
+                            <div style="
+                                display: flex;
+                                flex-direction: column;
+                                height: 100%;
+                                justify-content: flex-end;
+                                color: white;
+                                ">
+                                Play Now
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -401,3 +401,53 @@ body {
     height: 100%;
     background-color: blue;
 }
+
+/* 
+        ##########################
+        ##### CONTENT BOX 1  #####
+        ##########################
+*/
+
+#content-chess-pic {
+    height: 100vh;
+    background-color: white;
+
+}
+
+.right-content-box.content-title {
+    width: 100%;
+    height: 8%;
+    background-color: red;
+
+    margin-left: 5%;
+    font-size: 200%;
+}
+
+.right-content-box.content-desc {
+    width: 90%;
+    height: 50%;
+    background-color: purple;
+
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: 200%;
+}
+
+.right-content-box.content-footer {
+    width: 90%;
+    height: 20%;
+    background-color: yellow;
+
+    margin-left: 5%;
+    margin-top: 5%;
+    font-size: 200%;
+
+    display: flex;
+}
+
+.right-content-box.content-div {
+    width: 50%;
+    height: 100%;
+
+    background-color: grey;
+}

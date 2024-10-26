@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+venv.sh
+website/chessProject/venv/

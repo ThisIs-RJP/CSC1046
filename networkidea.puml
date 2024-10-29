@@ -1,0 +1,26 @@
+@startuml
+
+actor player1 as "Player 1"
+actor player2 as "Player 2"
+
+node "Client Device" {
+    artifact "Chess Game Website" as chess_ui
+    artifact "HTTP Client" as client_communication
+}
+
+node "Server" {
+    artifact "Chess Game Backend" as chess_backend
+}
+
+database "SQL Database" {
+    artifact "SQL Server" as chess_database
+}
+
+player1 --> chess_ui : Uses
+player2 --> chess_ui : Uses
+client_communication --> chess_backend : Sends HTTP Requests
+chess_backend --> chess_database : Stores Game Data
+chess_database --> chess_backend : Retrieves Game Data
+chess_backend --> client_communication : Sends HTTP Response
+
+@enduml

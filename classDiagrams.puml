@@ -1,0 +1,108 @@
+@startuml
+
+interface ChessPieceMovementLogic{
+    + move(position: Position)
+}
+
+abstract class ChessPiece implements ChessPieceMovementLogic{
+    - position: Position
+    + isWhite: Boolean
+    + isFrozen : Boolean
+    + isCursed : Boolean
+    + isDoubleCapturable: Boolean
+    + getPosition()
+    + updatePosition()
+    + move(position: Position)
+}
+
+class Validator {
+    + validateMove(chessPiece, startPosition, endPosition)
+    + specialCasesHandler(chessPiece, startPosition, endPosition)
+}
+
+class Board {
+    + squares: List<List<ChessPiece>>
+    + roundCounter: Integer
+    + check: Boolean
+    + validator: Validator
+    + trapDoorPositions: HashMap<Position, TrapDoor>
+    + movePiece(chessPiece, startPosition, endPosition)
+    - trapDoorGenerator()
+    - validator: Validator
+    - isCheckmate()
+    - isOnTrapDoorHandler()
+    - isStalemate()
+}
+
+class TrapDoor {
+    + position: Position
+    + event: String
+}
+
+class Position {
+    + x: int
+    + y: int
+}
+
+class King {
+    + hasMoved : Boolean
+    + move(position: Position)
+}
+
+class Queen  {
+    + move(position: Position)
+}
+
+class Rook  {
+    + hasMoved : Boolean 
+    + move(position: Position)
+}
+
+class Bishop {
+    + move(position: Position)
+}
+
+class Knight {
+    + move(position: Position)
+}
+
+class Pawn {
+    + hasMoved : Boolean
+    - isAtEnd : Boolean
+    - randomPromotion()
+    + move(position: Position)
+}
+' Each subclass of ChessPiece defines their move logic method
+
+class Player {
+    + moveHistory : String
+    + chatHistory : String
+    + isWhite : Boolean
+}
+
+Board "1" --> "1..n" ChessPiece : "Updates position" 
+' ChessPieces and TrapDoors and Validators cannot exist without a board
+Board "1" *-- "1..n" ChessPiece : "Contains"
+Board "1" *-- "0..n" TrapDoor : "Contains"
+Board "1" *-- "1..1" Validator : "Contains"
+' Player can send messages to the board but the board does not need to know who the player is
+Player "1" --> Board : "Invokes moveChessPiece method"
+
+' Trapdoor and ChessPiece are associated with position as they contain Position classes as one their class memebers
+TrapDoor --> Position : "Contains"
+ChessPiece --> Position : "Contains"
+
+' Player knows what piece is their own based on the attribute isWhite 
+Player -- ChessPiece : "Owns" 
+note on link
+    Qualified by isWhite attribute
+end note
+
+ChessPiece <|-- King : "Implements"
+ChessPiece <|-- Queen : "Implements"
+ChessPiece <|-- Rook : "Implements"
+ChessPiece <|-- Bishop : "Implements"
+ChessPiece <|-- Knight : "Implements"
+ChessPiece <|-- Pawn : "Implements"
+
+@enduml

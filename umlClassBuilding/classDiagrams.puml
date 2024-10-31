@@ -75,8 +75,7 @@ class Pawn {
 ' Each subclass of ChessPiece defines their move logic method
 
 class Player {
-    + moveHistory : String
-    + chatHistory : String
+    + moveHistory : List<String>
     + isWhite : Boolean
 }
 

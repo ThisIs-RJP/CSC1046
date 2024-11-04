@@ -1,4 +1,3 @@
-
 /* Global styling */
 
 * {
@@ -34,7 +33,7 @@ body {
     animation-delay: 2s;
 }
 
-@keyframes makeSmaller  {
+@keyframes makeSmaller {
     0% {
         height: 100vh;
     }
@@ -65,11 +64,11 @@ body {
     width: 0%;
     height: auto;
 
-    background-color:#24242C;
-    
-    border-radius:50%;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
+    background-color: #24242C;
+
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
     /* margin-top: -15%; */
     rotate: -30deg;
 
@@ -102,7 +101,7 @@ body {
     background-color: white;
 
     animation: 2s behindLogoAnim forwards;
-} 
+}
 
 @keyframes behindLogoAnim {
     0% {
@@ -114,6 +113,7 @@ body {
         width: 0vw;
         height: 0vw;
     }
+
     50% {
         width: 24vw;
         height: 24vw;
@@ -161,50 +161,53 @@ body {
     width: 60%;
     height: 100%;
     background-color: #24242C;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .right-div {
     width: 40%;
     height: 100%;
     background-color: #FFFFFF;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 
 /* Navbar styling */
 
-.navbar-left{
+.navbar-left {
     display: flex;
     align-items: center;
-    padding: 10px;  
+    padding: 10px;
 }
-.navbar-left img{
+
+.navbar-left img {
     height: 54px;
     width: 54px;
     margin-left: 2%;
 }
 
-.left-div .navbar-left a{
+.left-div .navbar-left a {
     color: #FFFFFF;
     text-decoration: none;
     margin-left: 5%;
     margin-right: 5%;
     transition: transform 0.3s ease-in-out;
 }
-.left-div a:hover{
+
+.left-div a:hover {
     transform: scale(1.1);
 }
 
 
 .navbar-right {
-    display:flex;
+    display: flex;
     justify-content: flex-end;
     padding: 10px;
     align-items: center;
 
 }
-.right-div .navbar-right a{
+
+.right-div .navbar-right a {
     color: #24242C;
     text-decoration: none;
     margin-right: 5%;
@@ -212,79 +215,92 @@ body {
     margin-left: 10%;
     transition: transform 0.3s ease-in-out;
 }
-.right-div a:hover{
+
+.right-div a:hover {
     transform: scale(1.1);
 }
 
 /* Login styling */
 
-.login{
-    padding: 5% ;
+.login {
+    padding: 5%;
 }
-.login p{
+
+.login p {
     font-size: 54.2px;
 }
-.title{
+
+.title {
     width: fit-content;
     content: "";
 }
-.title:after{
+
+.title:after {
     content: "";
     animation: typeWriter 1.5s linear 1;
     animation-fill-mode: forwards;
 }
 
-.login .form-container .btn-container{
+.login .form-container .btn-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+
 .btn-container button {
-    background-color: transparent;  
-    border: none;                   
-    color: #000000;                 
-    padding: 10px 20px;             
-    font-size: 16px;               
-    cursor: pointer;                
-    outline: none;                 
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
     transition: color 0.3s ease, transform 0.3s ease-in-out;
-    text-align: left;   
+    text-align: left;
 }
 
 .btn-container button:hover {
-    color: #585858; 
+    color: #585858;
     transform: scale(1.15);
     transform: translateX(2%);
 }
 
 
 
-@keyframes typeWriter{
-    0%{
+@keyframes typeWriter {
+    0% {
         content: "W";
     }
-    12.5%{
+
+    12.5% {
         content: "WEL";
     }
-    25%{
+
+    25% {
         content: "WELCO";
     }
-    37.5%{
+
+    37.5% {
         content: "WELCOmE";
     }
-    50%{
+
+    50% {
         content: "WELCOM";
     }
-    62.5%{
+
+    62.5% {
         content: "WELCOME";
     }
-    75%{
+
+    75% {
         content: "WELCOME TO";
     }
-    87.5%{
+
+    87.5% {
         content: "WELCOME TO MYCHE";
     }
-    100%{
+
+    100% {
         content: "WELCOME TO MYCHESS";
     }
 }
@@ -295,8 +311,8 @@ body {
     padding: 15px;
     margin: 10px 0;
     border: none;
-    background-color: #C4C4C4; 
-    border-radius: 20px; 
+    background-color: #C4C4C4;
+    border-radius: 20px;
     font-size: 16px;
     color: white;
     outline: none;
@@ -306,12 +322,12 @@ body {
 
 .form-container .input-box::placeholder {
     color: white;
-    opacity: 0.8; 
+    opacity: 0.8;
 }
 
 .form-container .input-box:focus {
     background-color: #B0B0B0;
-    transform: scale(1.05); 
+    transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3)
 }
 
@@ -321,58 +337,64 @@ body {
     from {
         transform: translateX(0);
     }
-    to{
+
+    to {
         transform: translateX(-100%);
     }
 }
+
 @keyframes right-slide {
     from {
         transform: translateX(0);
     }
-    to{
+
+    to {
         transform: translateX(100%);
     }
 }
-.chess-wheel{
+
+.chess-wheel {
     overflow: hidden;
     padding: 60px 0;
     white-space: nowrap;
     display: flex;
     margin-top: 10%;
 }
-.chess-wheel:hover .chess-slide{
+
+.chess-wheel:hover .chess-slide {
     animation-play-state: paused;
 }
 
-.chess-slide{
+.chess-slide {
     animation: 3s slide infinite linear;
 }
-.chess-slide img{ 
+
+.chess-slide img {
     height: 100px;
     margin-right: 10px;
 }
 
 .chess-wheel-right {
     display: flex;
-    flex-direction: row-reverse; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    width: 100%; 
+    flex-direction: row-reverse;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
     margin-top: 10%;
 }
 
 /* Flex items */
 .chess-slide-right {
     display: flex;
-    animation: 3s right-slide infinite linear; 
+    animation: 3s right-slide infinite linear;
 }
 
 .chess-slide-right img {
     height: 100px;
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
-.chess-wheel-right:hover .chess-slide-right{
+.chess-wheel-right:hover .chess-slide-right {
     animation-play-state: paused;
 }
 
@@ -450,4 +472,91 @@ body {
     height: 100%;
 
     background-color: grey;
+}
+
+/* 
+        ################################
+        ##### ABOUT US BOX DEFAULT #####
+        ################################
+*/
+
+.about-us {
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+}
+
+.about-us.sectionSection {
+    width: 100vw;
+    height: 33%;
+    background-color: red;
+    display: flex;
+}
+
+.about-us.sectionSection.box {
+    width: 50%;
+    height: 100%;
+    background-color: pink;
+    display: flex;
+}
+
+.about-us.sectionSection.box.icon {
+    background-color: green;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-picture {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+}
+
+.about-us.sectionSection.box.developer {
+    background-color: cyan;
+    width: 70%;
+    padding-left: 5%;
+    align-items: center;
+}
+
+.about-us.sectionSection.box.developerRight {
+    background-color: black;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%
+}
+
+.about-us.sectionSection.box.developer.details {
+    background-color: red;
+    width: 70%;
+    height: 20vh;
+    display: flex;
+    text-align: right;
+    flex-direction: column;
+    /* Ensures children stack vertically */
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* Aligns items to the top of the div */
+}
+
+.about-us.sectionSection.box.developer.details2 {
+    background-color: turquoise;
+    width: 70%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
+    /* Keeps children stacked vertically */
+    justify-content: flex-start;
+    /* Aligns items to the top */
+    align-items: flex-end;
+    /* Moves text to the right side */
+    text-align: right;
+    /* Ensures text inside the div is right-aligned */
+    /* Optional: adds some space from the right edge */
 }

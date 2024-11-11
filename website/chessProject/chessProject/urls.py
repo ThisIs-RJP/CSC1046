@@ -16,12 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from chessApp import views
 
 urlpatterns = [
+    path ('', include('chessApp.urls')),
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('new_game/', views.new_game, name='new_game'),
-    path('join_game/', views.join_game, name='join_game'),
-    path('login/', views.login, name='login')
 ]

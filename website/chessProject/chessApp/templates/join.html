@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Join Game
+{% endblock %}
+
+{% block content %}
+<body>
+    Enter a game code:<br>
+    <form method="post" action="{% url 'gameJoiner' room_code='room_code_placeholder' %}" onsubmit="this.action=this.action.replace('room_code_placeholder', document.getElementById('room_code').value);">
+        {% csrf_token %}
+        <input id="room_code" name="room_code" type="text" size="6"><br>
+        <button type="submit">Join Game</button>
+    </form>
+
+</body>
+{% endblock %}

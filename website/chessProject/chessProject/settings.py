@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chessApp', 
+    'chessApp',
 ]
 
 STATIC_URL = '/static/'
@@ -46,6 +47,9 @@ LOGIN_REDIRECT_URL = '/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",  
 ]
+
+# Define root routing for Daphne
+ASGI_APPLICATION = "chessProject.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'chessApp.context_processors.cached_global_variable',
             ],
         },
     },

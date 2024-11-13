@@ -17,10 +17,10 @@ def new_game(request):
     
 def join_game(request):
     return render(request, 'home.html')
-    
-def login(request):
-    return render(request, 'home.html')
 
+
+class UserLoginView(LoginView):
+    template_name='login.html'
 
 class UserSignupView(CreateView):
     model = User
@@ -33,11 +33,8 @@ class UserSignupView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect("home.html")
+        return redirect("home")
 
-
-class UserLoginView(LoginView):
-    template_name='home.html'
 
 
 def logout_user(request):

@@ -6,6 +6,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import path, include
+from django.contrib import messages
 from . import views
 from .forms import *
 
@@ -21,6 +22,11 @@ def join_game(request):
 
 class UserLoginView(LoginView):
     template_name='login.html'
+    
+    def form_valid(self, form):
+        messages.success(self.request, f"Logged in as {self.request.user.username}")
+        print(messages.get_messages(self.request))  
+        return super().form_valid(form)
 
 class UserSignupView(CreateView):
     model = User
@@ -33,6 +39,8 @@ class UserSignupView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
+        messages.success(self.request, f"Successfully registered as {user.username}")
+        print(messages.get_messages(self.request))  
         return redirect("home")
 
 

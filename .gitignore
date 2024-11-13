@@ -2,4 +2,4 @@ __pycache__/
 *.pyc
 playground.py
 *.py
-venv/playground.py
+venv/

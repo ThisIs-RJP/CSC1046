@@ -96,23 +96,21 @@
         <div class="right-div">
             <div class="navbar-right">
                 <a href="#">Play</a>
-                <a href="#">Log in</a>
+                
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Log In</a>
+                {% endif %}
             </div>
 
-
-            <div class="login">
+            <div class="welcome-title">
+                {% if user.is_authenticated %}
+                <h1>{{ user.username }}!</h1>
+            {% else %}
+                <!-- Nothing displayed if the user is not logged in -->
+            {% endif %}
                 <p class="title"></p>
-                <div class="form-container">
-                    <input type="email" placeholder="Email address" class="input-box">
-
-                    <input type="password" placeholder="Password" class="input-box">
-
-                    <div class="btn-container">
-                        <button>Login</button>
-                        <button>Create Account</button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>

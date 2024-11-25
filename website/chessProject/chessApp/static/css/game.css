@@ -1,0 +1,138 @@
+/* Global styling */
+
+body {
+    display: flex;
+}
+
+.left-side {
+    width:            75vw;
+    height:           100vh;
+    background-color: black;
+}
+
+.right-side {
+    width:            25vw;
+    height:           100vh;
+    background-color: white;
+}
+
+.center-board {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    height:          100%;
+}
+
+.chess-board {
+    width:            45vw;
+    height:           45vw;
+    background-color: white;
+}
+
+#board {
+    width:  100%;
+    height: 100%;
+}
+
+.player-box {
+    width:            100%;
+    height:           20vh;
+    background-color: white;
+    display:          flex;
+    justify-content:  center;
+    align-items:      center;
+}
+
+.player-card {
+    width:            85%;
+    height:           80%;
+    background-color: #f0f0f0;
+    display:          flex;
+}
+
+.player-icon {
+    height:          100%;
+    width:           40%;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+}
+
+.player-icon.icon {
+    width:         70%;
+    height:        70%;
+    border-radius: 50%;
+}
+
+.player-details {
+    width:  60%;
+    height: 100%;
+}
+
+.to-center {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    height:          100%;
+}
+
+.player-details.text {
+    width:  80%;
+    height: 70%;
+}
+
+.time {
+    width:       100%;
+    height:      40%;
+    text-align:  center;
+    font-size:   180%;
+    font-weight: bolder;
+}
+
+.move-history {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    width:           100%;
+    height:          60vh;
+}
+
+.history-box {
+    width:   85%;
+    height:  90%;
+    display: flex;
+}
+
+.move-list-box {
+    width:            50%;
+    height:           100%;
+    background-color: aquamarine;
+}
+
+.move-list-box.title {
+    width:            100%;
+    height:           5%;
+    display:          flex;
+    text-align:       center;
+    justify-content:  center;
+    color:            white;
+    background-color: rgb(73 73 73);
+}
+
+.history-box.black {
+    width:  50%;
+    height: 100%;
+}
+
+.move-list.list {
+    width:            100%;
+    height:           95%;
+    overflow-y:       auto;
+    background-color: #f0f0f0;
+}
+
+.move-list.move {
+    width:            100%;
+    height:           5%;
+    background-color: #b4b4b4;
+}

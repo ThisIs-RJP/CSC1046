@@ -19,6 +19,8 @@ def new_game(request):
 def join_game(request):
     return render(request, 'home.html')
 
+def game(request):
+    return render(request, 'game.html')
 
 class UserLoginView(LoginView):
     template_name='login.html'
@@ -42,7 +44,6 @@ class UserSignupView(CreateView):
         messages.success(self.request, f"Successfully registered as {user.username}")
         print(messages.get_messages(self.request))  
         return redirect("home")
-
 
 
 def logout_user(request):

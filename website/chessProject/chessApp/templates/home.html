@@ -9,17 +9,16 @@
 
     <link rel="icon" href="{% static 'images/chessLogo.png' %}">
 
-    <!-- ######################## FIXING THE FONTS ########################-->
+    <!-- ######################## FONTS ########################-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
-    <!-- ######################## FIXING THE FONTS ########################-->
-
-
+    <!-- ######################## CSS STYLE SHEETS ########################-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/scrollbar-style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+
     {% block extra_styles %}
     {% endblock %}
 </head>
@@ -96,20 +95,20 @@
         <div class="right-div">
             <div class="navbar-right">
                 <a href="#">Play</a>
-                
+
                 {% if user.is_authenticated %}
-                    <a href="{% url 'logout' %}">Log Out</a>
+                <a href="{% url 'logout' %}">Log Out</a>
                 {% else %}
-                    <a href="{% url 'login' %}">Log In</a>
+                <a href="{% url 'login' %}">Log In</a>
                 {% endif %}
             </div>
 
             <div class="welcome-title">
                 {% if user.is_authenticated %}
                 <h1>{{ user.username }}!</h1>
-            {% else %}
+                {% else %}
                 <!-- Nothing displayed if the user is not logged in -->
-            {% endif %}
+                {% endif %}
                 <p class="title"></p>
             </div>
         </div>
@@ -132,13 +131,13 @@
             </div>
             <div class="right-content-box content-desc">
                 <h6>
-                Welcome to MyChess! A platform to play online chess with a twist. 
-                MyChess offers classic chess with additional features from trap 
-                spaces to random piece promotion, our site is perfect to challenge 
-                players worldwide. You have the choice to pick and chose what features 
-                you want when you play so test your skills by playing another user live.
-                Join our community today and take your chess experiences to the next level!
-            </h6>
+                    Welcome to MyChess! A platform to play online chess with a twist.
+                    MyChess offers classic chess with additional features from trap
+                    spaces to random piece promotion, our site is perfect to challenge
+                    players worldwide. You have the choice to pick and chose what features
+                    you want when you play so test your skills by playing another user live.
+                    Join our community today and take your chess experiences to the next level!
+                </h6>
             </div>
 
             <div class="right-content-box content-footer" style="display: flex; 
@@ -146,19 +145,19 @@
                                                     align-items: center;
                                                     background-color: rgb(133, 133, 133);
                                                     border-radius: 45px;">
-            <div style="display: flex;
+                <div style="display: flex;
                         align-items: center;
                         height: 100%;
                         color: rgb(129, 129, 129);">
-                
-                <img id="right-content-icon" src="{% static 'images/chessLogo.png' %}" style="height: 45%;">
-                <span style="color: rgb(255, 255, 255);">      Play Now</span> 
-            </div>
-        </div>
-                    </div>
+
+                    <img id="right-content-icon" src="{% static 'images/chessLogo.png' %}" style="height: 45%;">
+                    <span style="color: rgb(255, 255, 255);"> Play Now</span>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
+    </div>
     </div>
 
     <!-- 
@@ -200,7 +199,10 @@
                         <h1 style="font-weight: bold">
                             Christian Michael Lagura Yacapin
                         </h1>
-Hi, I’m Christian Michael Lagura Yacapin, your Lead Class Engineer! I focus on designing and developing efficient, scalable object-oriented programming (OOP) classes to bring our projects to life while ensuring they’re well-structured and maintainable—let’s build something awesome together!
+                        Hi, I’m Christian Michael Lagura Yacapin, your Lead Class Engineer! I focus on designing and
+                        developing efficient, scalable object-oriented programming (OOP) classes to bring our projects
+                        to life while ensuring they’re well-structured and maintainable—let’s build something awesome
+                        together!
                     </div>
                 </div>
             </div>
@@ -280,7 +282,7 @@ Hi, I’m Christian Michael Lagura Yacapin, your Lead Class Engineer! I focus on
                         <h1 style="font-weight: bold">
                             Diana Williams Oshun
                         </h1>
-                        
+
                     </div>
                 </div>
             </div>

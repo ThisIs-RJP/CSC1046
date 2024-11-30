@@ -31,7 +31,5 @@ def format(file_path):
     with open(file_path, 'w') as f:
         f.write('\n\n'.join(formatted_rules))
 
-css_files = glob.glob('website/chessProject/chessApp/static/css/*.css')
-
-for css_file in css_files:
-    format(css_file)
+for css in glob.glob('website/chessProject/chessApp/static/css/*.css'):
+    format(css)

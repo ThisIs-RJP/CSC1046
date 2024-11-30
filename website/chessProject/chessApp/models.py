@@ -7,7 +7,6 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 # Piece model: rep individual chess piece on the board
 # Move model: Store history of moves
 
-
 class UserManager(BaseUserManager):
     use_in_migrations = True
 

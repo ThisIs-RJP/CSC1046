@@ -1,5 +1,16 @@
 # MyChess Application
 
+## NOTE
+Please change branch to `prod`
+
+```
+git checkout prod
+```
+
+Our main branch is considered our `dev` environment. Much *redundant* code may be left in this branch.
+
+`prod` however, will have the most refined changes. So please switch to this branch when using our application.
+
 ## Initial Setup
 ```
 cd website/chessProject

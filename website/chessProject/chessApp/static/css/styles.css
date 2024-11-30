@@ -433,14 +433,12 @@ to {
 }
 
 .right-content-box.content-footer {
-    width:               90%;
-    height:              20%;
-    /* background-color: yellow;
-    */
-    margin-left:  5%;
-    margin-top:          5%;
-    font-size:           200%;
-    display:             flex;
+    width:       90%;
+    height:      20%;
+    margin-left: 5%;
+    margin-top:  5%;
+    font-size:   200%;
+    display:     flex;
 }
 
 .right-content-box.content-div {
@@ -457,36 +455,29 @@ to {
 */
 
 .about-us {
-    width:               100vw;
-    height:              100vh;
-    /* background-color: yellow;
+    width:  100vw;
+    height: 100vh;
 }
 
 .about-us.sectionSection {
-    width:                   100vw;
-    height:                  33%;
-    /* background-color:     red;
-    */
+    width:            100vw;
+    height:           33%;
     background-color: white;
-    display:                 flex;
+    display:          flex;
 }
 
 .about-us.sectionSection.box {
-    width:               50%;
-    height:              100%;
-    /* background-color: aquamarine;
-    */
-    display:      flex;
+    width:   50%;
+    height:  100%;
+    display: flex;
 }
 
 .about-us.sectionSection.box.icon {
-    /* background-color:     green;
-    */
     background-color: rgb(17 17 17);
-    width:                   30%;
-    display:                 flex;
-    justify-content:         center;
-    align-items:             center;
+    width:            30%;
+    display:          flex;
+    justify-content:  center;
+    align-items:      center;
 }
 
 .profile-picture {
@@ -511,28 +502,24 @@ to {
 }
 
 .about-us.sectionSection.box.developer.details {
-    /* background-color: red;
-    */
-    width:        70%;
-    height:              20vh;
-    display:             flex;
-    text-align:          right;
-    flex-direction:      column;
-    justify-content:     flex-start;
-    align-items:         flex-start;
-    font-size:           0.8vw;
+    width:           70%;
+    height:          20vh;
+    display:         flex;
+    text-align:      right;
+    flex-direction:  column;
+    justify-content: flex-start;
+    align-items:     flex-start;
+    font-size:       0.8vw;
 }
 
 .about-us.sectionSection.box.developer.details2 {
-    /* background-color: turquoise;
-    */
-    width:        70%;
-    height:              20vh;
-    display:             flex;
-    flex-direction:      column;
-    padding-right:       5%;
-    justify-content:     flex-start;
-    align-items:         flex-end;
-    text-align:          right;
-    font-size:           0.8vw;
+    width:           70%;
+    height:          20vh;
+    display:         flex;
+    flex-direction:  column;
+    padding-right:   5%;
+    justify-content: flex-start;
+    align-items:     flex-end;
+    text-align:      right;
+    font-size:       0.8vw;
 }
